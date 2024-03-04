@@ -9,6 +9,6 @@ Create a component that meets the requirements:
 - Switching the status of a record Completed / Not completed when clicking on its name.
 - Filtering by type (all, completed, current).
 - Display counter of completed and uncompleted tasks.
-- Use a storage (Redux).
-- For styling you can use any lib/framework, but remember UI matters.
-- Please use this linter https://github.com/wemake-services/wemake-frontend-styleguide.
+  ++ Use a storage (Redux).
+  ++ For styling you can use any lib/framework, but remember UI matters.
+  ++ Please use this linter https://github.com/wemake-services/wemake-frontend-styleguide.
