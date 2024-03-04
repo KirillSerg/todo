@@ -1,6 +1,8 @@
-import { TodoActions } from "./store/slices/TodoSlice"
-import { useAppDispatch, useAppSelector } from "./store/store"
-import { Todo } from "./types/CommonTypes"
+import { TodoActions } from './store/slices/TodoSlice'
+import { useAppDispatch, useAppSelector } from './store/store'
+import { Todo } from './types/CommonTypes'
+import styles from './App.module.scss'
+import Counter from './components/counters/Counter'
 
 const App = (): React.JSX.Element => {
   const dispatch = useAppDispatch()
@@ -10,17 +12,19 @@ const App = (): React.JSX.Element => {
     dispatch(
       TodoActions.addTodo({
         id: crypto.randomUUID(),
-        title: "awesome title",
+        title: 'awesome title',
         isComplit: false,
       }),
     )
   }
 
   return (
-    <div>
+    <section className={styles.container}>
+      <header>Todo list</header>
+      <Counter />
       <button onClick={handleAddTodo}>add todo</button>
       {todos && todos.map((todo) => <h1 key={todo.id}>{todo.title}</h1>)}
-    </div>
+    </section>
   )
 }
 

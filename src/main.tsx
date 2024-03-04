@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { store } from './store/store.ts'
 import { Provider } from 'react-redux'
-import './index.module.scss'
+import './index.css'
 
 ReactDOM.createRoot(document.querySelector('#root')!).render(
   <React.StrictMode>
