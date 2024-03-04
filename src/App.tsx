@@ -1,5 +1,7 @@
-const App = () => {
-  return <div></div>;
-};
+import React from 'react'
 
-export default App;
+const app = (): React.JSX.Element => {
+  return <div>Hi</div>
+}
+
+export default app
