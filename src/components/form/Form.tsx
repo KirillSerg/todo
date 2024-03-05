@@ -25,7 +25,7 @@ const Form: React.FC = () => {
       TodoActions.addTodo({
         id: crypto.randomUUID(),
         title: title,
-        isComplit: false,
+        isComplete: false,
       }),
     )
     setTitle('')

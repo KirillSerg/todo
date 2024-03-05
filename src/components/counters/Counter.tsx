@@ -2,9 +2,9 @@ import { useAppSelector } from '../../store/store'
 import { Todo } from '../../types/CommonTypes'
 
 const Counter = (): React.JSX.Element => {
-  const todos = useAppSelector<Todo[]>((state) => state.todoReducer.todos)
-  const finished = todos.filter((todo) => todo.isComplit).length
-  const started = todos.filter((todo) => !todo.isComplit).length
+  const todos = useAppSelector<Todo[]>(state => state.todoReducer.todos)
+  const finished = todos.filter(todo => todo.isComplete).length
+  const started = todos.filter(todo => !todo.isComplete).length
 
   return (
     <div>
