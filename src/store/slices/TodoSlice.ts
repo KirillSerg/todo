@@ -21,7 +21,8 @@ export const todoSlice = createSlice({
       state.todos = state.todos.filter(todo => todo.id !== payload)
     },
     setStatus: (state, { payload }: PayloadAction<string>) => {
-      state.todos = state.todos.map(todo => todo.id === payload ? { ...todo, isComplete: !todo.isComplete } : todo)
+      const todos = state.todos.map(todo => todo.id === payload ? { ...todo, isComplete: !todo.isComplete } : todo)
+      state.todos = todos.sort((a, b) => +a.isComplete - +b.isComplete)
     },
   },
 })
