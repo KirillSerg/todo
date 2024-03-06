@@ -1,0 +1,14 @@
+.filter_wrap {
+  select {
+    height: 28px;
+    background: var(--color-bg-disabled);
+    color: var(--color-text-main);
+    border-radius: 4px;
+    border: 1px solid var(--color-bg-disabled);
+    &:focus,
+    &:focus-visible {
+      border: 1px solid var(--color-accent);
+      outline: none;
+    }
+  }
+}

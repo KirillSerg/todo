@@ -16,7 +16,7 @@ const TodoItem: React.FC<Todo> = ({ id, title, isComplete }) => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${isComplete && styles.complete}`}>
       <input
         type="checkbox"
         name={`isComplete${id}`}

@@ -3,7 +3,18 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { Todo } from '../../types/CommonTypes'
 
 const initialState: State = {
-  todos: []
+  todos: [
+    {
+      id: crypto.randomUUID(),
+      title: "create todo app",
+      isComplete: true,
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "got jobe offer",
+      isComplete: false,
+    }
+  ]
 }
 
 export interface State {
@@ -15,7 +26,7 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, { payload }: PayloadAction<Todo>) => {
-      state.todos = [...state.todos, payload]
+      state.todos = [payload, ...state.todos]
     },
     deleteTodo: (state, { payload }: PayloadAction<string>) => {
       state.todos = state.todos.filter(todo => todo.id !== payload)

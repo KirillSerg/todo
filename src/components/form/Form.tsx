@@ -25,8 +25,8 @@ const Form: React.FC = () => {
       TodoActions.addTodo({
         id: crypto.randomUUID(),
         title: title,
-        isComplete: false,
-      }),
+        isComplete: false
+      })
     )
     setTitle('')
     setErr('')
@@ -34,7 +34,7 @@ const Form: React.FC = () => {
 
   return (
     <div className={styles.form}>
-      <div>
+      <div className={styles.form_input}>
         <input
           id="title"
           type="text"
@@ -43,7 +43,7 @@ const Form: React.FC = () => {
           onChange={onChangeTitle}
         />
         <button disabled={!!err || !title} onClick={handleAddTodo}>
-          Add todo
+          + Add
         </button>
       </div>
       <label htmlFor="title">{err}</label>

@@ -6,9 +6,9 @@ interface Props {
 
 const StatusFilter = ({ onFilter }: Props): React.JSX.Element => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.filter_wrap}>
       <select
-        onChange={e => onFilter(e.target.value)}
+        onChange={(e) => onFilter(e.target.value)}
         name="byStatus"
         id="byStatus"
       >
@@ -16,7 +16,6 @@ const StatusFilter = ({ onFilter }: Props): React.JSX.Element => {
         <option value="complete">complete</option>
         <option value="not complete">not complete</option>
       </select>
-      <label htmlFor="byStatus">Filter by status</label>
     </div>
   )
 }

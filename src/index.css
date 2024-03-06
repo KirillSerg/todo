@@ -1,5 +1,43 @@
+:root {
+  --color-accent: #3bc998;
+  --color-alarm: #ff493d;
+
+  --color-bg-main: #222831;
+  --color-bg-item: #2c3139;
+  --color-bg-disabled: #404752;
+
+  --color-text-main: #fcfdfd;
+  --color-text-secondary: #02031b;
+  --color-text-tertiary: #bcbcbc;
+  --color-text-disabled: #7f899f;
+
+  --color-border-main: #545d6d;
+  --color-border-secondary: #404752;
+  --color-border-hover: #8b8c94;
+  --color-border-disabled: #545d6d;
+
+  --color-bg-scroll: #383f4a;
+  --color-bg-scroll-thumb: #616b7e;
+}
+
 body {
   margin: 0 0;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 20px;
+  min-height: calc(100vh - 40px);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-scroll);
+}
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 100px;
+  background: var(--color-bg-scroll-thumb);
 }

@@ -1,12 +1,21 @@
-.wrapper {
-  h4 {
-    margin: 0;
-  }
+.count_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   p {
     margin: 0;
+    font-size: 18px;
+    color: var(--color-text-tertiary);
     span {
-      font-weight: 600;
-      font-size: 20px;
+      font-weight: 700;
+      font-size: 24px;
+    }
+    .complited {
+      color: var(--color-accent);
+    }
+    .not_complited {
+      color: var(--color-alarm);
     }
   }
 }

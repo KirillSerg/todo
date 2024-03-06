@@ -1,19 +1,42 @@
 .wrapper {
-  width: 200px;
+  min-width: 260px;
+  width: 60%;
+  height: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-bg-item);
+  border-radius: 4px;
+  padding: 2px 10px;
+  &.complete {
+    text-decoration: line-through;
+    background-color: var(--color-bg-disabled);
+    color: var(--color-text-disabled);
+  }
+  &:hover {
+    background-color: var(--color-border-main);
+  }
   input {
     cursor: pointer;
+    &[type='checkbox'] {
+      accent-color: var(--color-accent);
+    }
+    &:hover {
+      scale: 1.2;
+    }
   }
   .title {
     cursor: pointer;
-    &.complete {
-      text-decoration: line-through;
+    &:hover {
+      scale: 1.1;
     }
   }
   button {
     all: unset;
+    display: flex;
     cursor: pointer;
+    &:hover {
+      scale: 1.2;
+    }
   }
 }

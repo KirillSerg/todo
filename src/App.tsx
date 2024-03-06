@@ -12,7 +12,7 @@ const App = (): React.JSX.Element => {
   const [filteredTodo, setFilteredTodo] = useState<Todo[]>([])
   const [filter, setFilter] = useState<string>('all')
 
-  const todos = useAppSelector<Todo[]>(state => state.todoReducer.todos)
+  const todos = useAppSelector<Todo[]>((state) => state.todoReducer.todos)
 
   const onFilter = (str: string): void => {
     setFilter(str)
@@ -20,9 +20,9 @@ const App = (): React.JSX.Element => {
 
   useEffect(() => {
     if (filter === 'complete') {
-      setFilteredTodo(todos.filter(todo => todo.isComplete))
+      setFilteredTodo(todos.filter((todo) => todo.isComplete))
     } else if (filter === 'not complete') {
-      setFilteredTodo(todos.filter(todo => !todo.isComplete))
+      setFilteredTodo(todos.filter((todo) => !todo.isComplete))
     } else {
       setFilteredTodo(todos)
     }
@@ -33,12 +33,14 @@ const App = (): React.JSX.Element => {
       <section className={styles.header}>
         <header>Todo list</header>
         <Counter />
-        <Form />
-        <StatusFilter onFilter={onFilter} />
+        <div className={styles.form_group}>
+          <Form />
+          <StatusFilter onFilter={onFilter} />
+        </div>
       </section>
-      <main>
+      <main className={styles.todo_list}>
         {filteredTodo.length > 0 ? (
-          filteredTodo.map(todo => <TodoItem key={todo.id} {...todo} />)
+          filteredTodo.map((todo) => <TodoItem key={todo.id} {...todo} />)
         ) : (
           <p>You don't have any tasks yet</p>
         )}
